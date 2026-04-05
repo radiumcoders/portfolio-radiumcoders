@@ -10,6 +10,24 @@ import { Corners } from "./corners"
 import { useSound } from "@/hooks/use-sound"
 import { bookOpenSound } from "@/lib/book-open"
 
+const TECH_ICONS: Record<
+  string,
+  { icon?: string; iconLight?: string; iconDark?: string }
+> = {
+  React: { icon: "/tech-stack/react.svg" },
+  "Next.js": {
+    iconLight: "/tech-stack/nextjs2-light.svg",
+    iconDark: "/tech-stack/nextjs2-dark.svg",
+  },
+  "Tailwind CSS": { icon: "/tech-stack/tailwindcss.svg" },
+  TypeScript: { icon: "/tech-stack/typescript.svg" },
+  Motion: { icon: "/tech-stack/motion.svg" },
+  "Tanstack Start": {
+    iconLight: "/tech-stack/tanstack-light.svg",
+    iconDark: "/tech-stack/tanstack-dark.svg",
+  },
+}
+
 const PROJECTS = {
   own: [
     {
@@ -130,14 +148,38 @@ export function Projects({ className, ...props }: ProjectProps) {
 
                 {project.technologies && project.technologies.length > 0 && (
                   <div className="mt-3 flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-md border border-border bg-muted/50 px-2 py-1 text-[10px] font-medium text-foreground"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                    {project.technologies.map((tech) => {
+                      const iconData = TECH_ICONS[tech]
+                      return (
+                        <span
+                          key={tech}
+                          className="flex items-center gap-1.5 rounded-md border border-border bg-muted/50 px-2 py-1 text-[10px] font-medium text-foreground"
+                        >
+                          {iconData &&
+                            (iconData.icon ? (
+                              <img
+                                src={iconData.icon}
+                                alt={tech}
+                                className="size-3 object-contain"
+                              />
+                            ) : (
+                              <>
+                                <img
+                                  src={iconData.iconLight}
+                                  alt={tech}
+                                  className="size-3 object-contain dark:hidden"
+                                />
+                                <img
+                                  src={iconData.iconDark}
+                                  alt={tech}
+                                  className="hidden size-3 object-contain dark:block"
+                                />
+                              </>
+                            ))}
+                          {tech}
+                        </span>
+                      )
+                    })}
                   </div>
                 )}
 
