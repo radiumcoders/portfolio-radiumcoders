@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({ component: App })
 
 function App() {
   return (
-    <main className="min-h-screen w-full">
+    <main className="min-h-screen w-full overflow-x-hidden">
       <Navbar />
       <LowerHeader />
       <ProfileSection />
