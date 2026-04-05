@@ -14,41 +14,85 @@ const PROJECTS = {
   own: [
     {
       title: "DevStack",
-      date: "03.2024 - ∞",
+      date: "03.2026 - ∞",
       link: "https://devstack.radiumcoders.com",
       description: "STEAL THE EXACT STACKS REAL DEVELOPERS USE TO SCALE",
+      technologies: [
+        "React",
+        "Tanstack Start",
+        "Tailwind CSS",
+        "ShadCN",
+        "Neon",
+        "PostgreSQL",
+        "TypeScript",
+        "Better-Auth",
+      ],
     },
     {
       title: "Yaos",
-      date: "01.2025 - ∞",
+      date: "02.2026 - ∞",
       link: "https://yaos.vercel.app",
       description:
         "Yet Another Open Source, a cultated collection of open-source projects.",
+      technologies: [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "ShadCN",
+        "Neon",
+        "PostgreSQL",
+        "TypeScript",
+        "Motion",
+      ],
     },
   ],
   redesign: [
     {
       title: "Rizi Redesign",
-      date: "01.2022 - ∞",
+      date: "02.2026 - ∞",
       link: "https://rizitui.vercel.app/",
       description:
         "Redesigned website for the new emerging typescript tui framework called rizi TUI",
+      technologies: [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "ShadCN",
+        "TypeScript",
+        "Motion",
+      ],
     },
     {
       title: "NeetCode Redesign",
-      date: "01.2022 - ∞",
+      date: "04.2026 - ∞",
       link: "https://neet-code-challange.vercel.app/",
       description:
         "Redesigned website for the NeetCode platform have a minimal look and overall polished vibe.",
+      technologies: [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "ShadCN",
+        "TypeScript",
+        "Motion",
+      ],
     },
   ],
   opensource: [
     {
       title: "Mellow Lines",
-      date: "05.2023 - Present",
+      date: "01.2026 - Present",
       link: "https://mellowlines.dev/?utm_source=radiumcoders.com",
       description:
         "Transform Code into Motion Create stunning, cinematic code walkthroughs in seconds. The ultimate free and open source tool for developers, content creators and educators.",
+      technologies: [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "ShadCN",
+        "TypeScript",
+        "Motion",
+      ],
     },
   ],
 }
@@ -83,6 +127,20 @@ export function Projects({ className, ...props }: ProjectProps) {
             <AccordionContent className="px-0 pb-4">
               <div className="text-muted-foreground">
                 <p>{project.description}</p>
+
+                {project.technologies && project.technologies.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-md border border-border bg-muted/50 px-2 py-1 text-[10px] font-medium text-foreground"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
                 <div className="mt-4 flex items-center gap-3">
                   <a
                     href={project.link}
