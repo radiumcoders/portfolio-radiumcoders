@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 import { MoonIcon, SunIcon } from "@phosphor-icons/react"
 import { useSound } from "@/hooks/use-sound"
@@ -45,10 +44,8 @@ export default function ThemeToggle() {
   }
 
   return (
-    <Button
-      variant={"ghost"}
-      className={"rounded-md"}
-      size={"icon"}
+    <button
+      className="flex size-full items-center justify-center outline-none"
       onClick={toggleMode}
     >
       {mode === "dark" ? (
@@ -56,6 +53,6 @@ export default function ThemeToggle() {
       ) : (
         <SunIcon weight="duotone" size={16} />
       )}
-    </Button>
+    </button>
   )
 }
