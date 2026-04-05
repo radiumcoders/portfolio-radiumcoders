@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 import { MoonIcon, SunIcon } from "@phosphor-icons/react"
+import { useSound } from "@/hooks/use-sound"
+import { click8bitSound } from "@/lib/click-8bit"
 
 type ThemeMode = "light" | "dark"
 
@@ -26,6 +28,7 @@ function applyThemeMode(mode: ThemeMode) {
 
 export default function ThemeToggle() {
   const [mode, setMode] = useState<ThemeMode>("dark")
+  const [play] = useSound(click8bitSound)
 
   useEffect(() => {
     const initialMode = getInitialMode()
@@ -34,6 +37,7 @@ export default function ThemeToggle() {
   }, [])
 
   function toggleMode() {
+    play()
     const nextMode: ThemeMode = mode === "light" ? "dark" : "light"
     setMode(nextMode)
     applyThemeMode(nextMode)
