@@ -88,19 +88,19 @@ export function AboutInfo({ className, ...props }: AboutInfoProps) {
         <SocialLink
           name="X"
           icon="/icons/x.webp"
-          href="#"
+          href="https://x.com/radiumcoders"
           className="border-border md:border-r"
         />
         <SocialLink
           name="GitHub"
           icon="/icons/github.webp"
-          href="#"
+          href="https://github.com/radiumcoders"
           className="border-t border-border md:border-t-0 md:border-r"
         />
         <SocialLink
           name="Discord"
           icon="/icons/discord.webp"
-          href="#"
+          href="https://discord.com/users/1430161684600721560"
           className="border-t border-border md:border-t-0"
         />
       </div>
