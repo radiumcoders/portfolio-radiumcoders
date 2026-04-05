@@ -45,7 +45,12 @@ export default function ThemeToggle() {
   }
 
   return (
-    <Button variant={"outline"} size={"icon"} onClick={toggleMode}>
+    <Button
+      variant={"ghost"}
+      className={"rounded-md"}
+      size={"icon"}
+      onClick={toggleMode}
+    >
       {mode === "dark" ? (
         <MoonIcon weight="duotone" size={16} />
       ) : (
