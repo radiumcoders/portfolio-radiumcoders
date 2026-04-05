@@ -14,7 +14,7 @@ export function PatternSeparator({
     <div
       className={cn(
         // The repeating diagonal lines pattern using currentColor so it easily themes
-        "relative bg-[repeating-linear-gradient(315deg,currentColor_0,currentColor_1px,transparent_0,transparent_50%)] bg-[size:10px_10px] text-border/50",
+        "relative bg-[repeating-linear-gradient(315deg,currentColor_0,currentColor_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] text-border/50",
         // Conditional styling based on orientation
         orientation === "vertical"
           ? "h-full w-10 border-x border-border"

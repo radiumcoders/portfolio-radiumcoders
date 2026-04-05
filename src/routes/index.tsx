@@ -6,6 +6,7 @@ import { GithubGraph } from "@/components/some-core/github-graph"
 import JayLogo from "@/components/some-core/JayLogo"
 import { Navbar } from "@/components/some-core/navbar"
 import { PatternSeparator } from "@/components/some-core/pattern-separator"
+import { TechStack } from "@/components/some-core/tech-stack"
 import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/")({ component: App })
@@ -26,6 +27,12 @@ function App() {
         </Container>
       </section>
       <PatternSeparator />
+      <section className="w-full border-b border-border">
+        <Container innerClassName="py-4 flex flex-col gap-4">
+          <h1 className="text-2xl">Tech weaponry</h1>
+          <TechStack />
+        </Container>
+      </section>
     </main>
   )
 }
