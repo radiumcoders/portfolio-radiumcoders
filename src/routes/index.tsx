@@ -7,7 +7,9 @@ import JayLogo from "@/components/some-core/JayLogo"
 import { Navbar } from "@/components/some-core/navbar"
 import { PatternSeparator } from "@/components/some-core/pattern-separator"
 import { TechStack } from "@/components/some-core/tech-stack"
+import { Education } from "@/components/some-core/education"
 import { createFileRoute } from "@tanstack/react-router"
+import { Projects } from "@/components/some-core/projects"
 
 export const Route = createFileRoute("/")({ component: App })
 
@@ -27,12 +29,26 @@ function App() {
         </Container>
       </section>
       <PatternSeparator />
-      <section className="w-full border-b border-border">
+      <section className="w-full">
         <Container innerClassName="py-4 flex flex-col gap-4">
           <h1 className="text-2xl">Tech weaponry</h1>
           <TechStack />
         </Container>
       </section>
+      <PatternSeparator />
+      <section className="w-full border-b border-border">
+        <Container innerClassName="py-4 flex flex-col gap-4">
+          <h1 className="text-2xl">Education</h1>
+          <Education />
+        </Container>
+      </section>
+      <section className="w-full">
+        <Container innerClassName="py-4 flex flex-col gap-4">
+          <h1 className="text-2xl">Projects</h1>
+          <Projects />
+        </Container>
+      </section>
+      <PatternSeparator />
     </main>
   )
 }
@@ -65,7 +81,7 @@ const ProfileSection = () => {
       <div className="flex w-full flex-col">
         <div className="flex h-full flex-col justify-end px-4 pt-6 pb-2 sm:px-6">
           <span className="block font-mono text-[10px] font-medium text-muted-foreground/40 sm:text-sm">
-            text-3xl text-zinc-950 font-medium
+            text-3xl text-primary font-medium
           </span>
         </div>
         <div className="flex h-fit items-center gap-1.5 border-t border-border px-4 py-4 sm:px-6">
