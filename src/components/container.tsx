@@ -14,7 +14,7 @@ export function Container({
         className
       )}
     >
-      <div className="mx-auto flex min-h-svh w-full max-w-7xl border-x border-border px-4">
+      <div className="mx-auto flex min-h-full w-full max-w-3xl border-x border-border px-4">
         {children}
       </div>
     </section>

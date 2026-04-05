@@ -1,13 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router"
-import { Button } from "@/components/ui/button"
 import { Container } from "@/components/container"
-import SegmentedNav from "@/components/SegmentedNav"
+import ThemeToggle from "@/components/toggle-theme"
+import { Button } from "@/components/ui/button"
+import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/")({ component: App })
 
 function App() {
   return (
-    <>
+    <main className="min-h-screen w-full">
+      <Container>
+        <div className="flex gap-4">
+          <ThemeToggle />
+        </div>
+      </Container>
       <Container>
         <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
           <div>
@@ -18,11 +23,6 @@ function App() {
           </div>
         </div>
       </Container>
-      <Container className="max-h-fit">
-        <SegmentedNav
-          onItemChange={(item) => console.log(`Selected: ${item}`)}
-        />
-      </Container>
-    </>
+    </main>
   )
 }
