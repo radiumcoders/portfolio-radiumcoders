@@ -17,6 +17,12 @@ export const Navbar = () => {
         <nav className="hidden h-full items-center space-x-4 text-sm font-medium sm:space-x-6 md:flex">
           <Link
             to="/"
+            hash="projects"
+            onClick={() => {
+              document
+                .getElementById("projects")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }}
             className="text-muted-foreground transition-colors hover:text-foreground"
             activeProps={{ className: "text-foreground" }}
           >

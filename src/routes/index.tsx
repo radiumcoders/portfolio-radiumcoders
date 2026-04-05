@@ -42,7 +42,7 @@ function App() {
           <Education />
         </Container>
       </section>
-      <section className="w-full">
+      <section id="projects" className="w-full">
         <Container innerClassName="py-4 flex flex-col gap-4">
           <h1 className="text-2xl">Projects</h1>
           <Projects />
