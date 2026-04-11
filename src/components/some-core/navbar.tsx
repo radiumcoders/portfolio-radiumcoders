@@ -5,8 +5,7 @@ import { Link } from "@tanstack/react-router"
 
 const NAV_LINKS = [
   { name: "Projects", to: "/", hash: "projects", scrollId: "projects" },
-  { name: "Blogs", to: "/" },
-  { name: "Components", to: "/" },
+  { name: "Blogs", to: "/blogs" },
 ]
 
 export const Navbar = () => {

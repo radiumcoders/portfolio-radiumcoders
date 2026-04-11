@@ -11,7 +11,7 @@ function getInitialMode(): ThemeMode {
   }
 
   const stored = window.localStorage.getItem("theme")
-  if (stored === "light" || stored === "dark") {
+  if (stored === "light" || stored === "dark") { 
     return stored
   }
 
@@ -38,9 +38,19 @@ export default function ThemeToggle() {
   function toggleMode() {
     play()
     const nextMode: ThemeMode = mode === "light" ? "dark" : "light"
-    setMode(nextMode)
-    applyThemeMode(nextMode)
-    window.localStorage.setItem("theme", nextMode)
+
+    const updateTheme = () => {
+      setMode(nextMode)
+      applyThemeMode(nextMode)
+      window.localStorage.setItem("theme", nextMode)
+    }
+
+    if (!document.startViewTransition) {
+      updateTheme()
+      return
+    }
+
+    document.startViewTransition(() => updateTheme())
   }
 
   return (
