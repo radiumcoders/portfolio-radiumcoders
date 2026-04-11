@@ -26,6 +26,16 @@ const TECH_ICONS: Record<
     iconLight: "/tech-stack/tanstack-light.svg",
     iconDark: "/tech-stack/tanstack-dark.svg",
   },
+  "Better-Auth": {
+    iconLight: "/tech-stack/betterauth_dark.png",
+    iconDark: "/tech-stack/betterauth_light.png",
+  },
+  Neon: { icon: "/tech-stack/neon.svg" },
+  PostgreSQL: { icon: "/tech-stack/postgresql.svg" },
+  ShadCN: {
+    iconLight: "/tech-stack/shadcn_dark.png",
+    iconDark: "/tech-stack/shadcn_light.png",
+  },
 }
 
 const PROJECTS = {

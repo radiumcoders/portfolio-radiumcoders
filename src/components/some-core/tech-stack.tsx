@@ -41,6 +41,18 @@ const TECH_STACK = [
     iconLight: "/tech-stack/zed-logo light.svg",
     iconDark: "/tech-stack/zed-logo.svg",
   },
+  {
+    name: "Better Auth",
+    iconLight: "/tech-stack/betterauth_dark.png",
+    iconDark: "/tech-stack/betterauth_light.png",
+  },
+  { name: "Neon", icon: "/tech-stack/neon.svg" },
+  { name: "PostgreSQL", icon: "/tech-stack/postgresql.svg" },
+  {
+    name: "shadcn/ui",
+    iconLight: "/tech-stack/shadcn_dark.png",
+    iconDark: "/tech-stack/shadcn_light.png",
+  },
 ]
 
 export interface TechStackProps extends React.HTMLAttributes<HTMLDivElement> {}
