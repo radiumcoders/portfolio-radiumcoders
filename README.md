@@ -1,5 +1,12 @@
 # Personal Developer Portfolio
 
+<p align="center">
+  <img src="./public/preview-images/dark.png" alt="Dark Mode Preview" />
+  <br />
+  <br />
+  <img src="./public/preview-images/light.png" alt="Light Mode Preview" />
+</p>
+
 A modern, highly interactive, and minimalist personal developer portfolio built with **TanStack Start**, **React 19**, and **Tailwind CSS v4**. 
 
 This portfolio features a sleek dark/light mode, fluid Framer Motion animations, custom sound effects, a live GitHub contribution graph, and an ultra-polished UI crafted with customized Shadcn and Base UI components.
