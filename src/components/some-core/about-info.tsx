@@ -34,7 +34,7 @@ export function AboutInfo({ className, ...props }: AboutInfoProps) {
                 <MapPinIcon className="size-4" />
               </div>
               <span className="font-mono text-sm text-foreground">
-                Indore ,India
+                Indore,India
               </span>
             </div>
             <div className="flex items-center gap-3">

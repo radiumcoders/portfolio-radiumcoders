@@ -11,7 +11,7 @@ function getInitialMode(): ThemeMode {
   }
 
   const stored = window.localStorage.getItem("theme")
-  if (stored === "light" || stored === "dark") { 
+  if (stored === "light" || stored === "dark") {
     return stored
   }
 
@@ -52,6 +52,16 @@ export default function ThemeToggle() {
 
     document.startViewTransition(() => updateTheme())
   }
+
+  useEffect(() => {
+    const syncTheme = () => {
+      const isDark = document.documentElement.classList.contains("dark")
+      setMode(isDark ? "dark" : "light")
+      play()
+    }
+    window.addEventListener("theme-changed", syncTheme)
+    return () => window.removeEventListener("theme-changed", syncTheme)
+  }, [play])
 
   return (
     <button

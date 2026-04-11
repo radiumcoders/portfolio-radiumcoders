@@ -16,7 +16,12 @@ export const Navbar = () => {
         innerClassName="flex h-14 items-center justify-between pl-4 pr-0 sm:pl-6"
       >
         <div className="flex h-full items-center gap-4 sm:gap-6">
-          <JayLogo className="size-12 sm:size-16" />
+          <Link
+            viewTransition
+            to="/"
+          >
+            <JayLogo className="size-12 sm:size-16" />
+          </Link>
         </div>
 
         <div className="ml-auto flex h-full items-center">
@@ -26,6 +31,7 @@ export const Navbar = () => {
                 key={link.name}
                 to={link.to as any}
                 hash={link.hash}
+                viewTransition
                 onClick={() => {
                   if (link.scrollId) {
                     document
