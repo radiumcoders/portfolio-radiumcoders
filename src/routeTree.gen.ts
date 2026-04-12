@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as HulalaIndexRouteImport } from './routes/hulala/index'
 import { Route as BlogsIndexRouteImport } from './routes/blogs/index'
 import { Route as BlogsIdRouteImport } from './routes/blogs/$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HulalaIndexRoute = HulalaIndexRouteImport.update({
+  id: '/hulala/',
+  path: '/hulala/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogsIndexRoute = BlogsIndexRouteImport.update({
@@ -33,30 +39,34 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/blogs/$id': typeof BlogsIdRoute
   '/blogs/': typeof BlogsIndexRoute
+  '/hulala/': typeof HulalaIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/blogs/$id': typeof BlogsIdRoute
   '/blogs': typeof BlogsIndexRoute
+  '/hulala': typeof HulalaIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/blogs/$id': typeof BlogsIdRoute
   '/blogs/': typeof BlogsIndexRoute
+  '/hulala/': typeof HulalaIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/blogs/$id' | '/blogs/'
+  fullPaths: '/' | '/blogs/$id' | '/blogs/' | '/hulala/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/blogs/$id' | '/blogs'
-  id: '__root__' | '/' | '/blogs/$id' | '/blogs/'
+  to: '/' | '/blogs/$id' | '/blogs' | '/hulala'
+  id: '__root__' | '/' | '/blogs/$id' | '/blogs/' | '/hulala/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BlogsIdRoute: typeof BlogsIdRoute
   BlogsIndexRoute: typeof BlogsIndexRoute
+  HulalaIndexRoute: typeof HulalaIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hulala/': {
+      id: '/hulala/'
+      path: '/hulala'
+      fullPath: '/hulala/'
+      preLoaderRoute: typeof HulalaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blogs/': {
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BlogsIdRoute: BlogsIdRoute,
   BlogsIndexRoute: BlogsIndexRoute,
+  HulalaIndexRoute: HulalaIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
