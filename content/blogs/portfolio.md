@@ -12,24 +12,25 @@ Welcome to my very first blog post! In this post, I'll walk you through the proc
 
 When deciding on the tools for my portfolio, I wanted something fast, reliable, and easy to maintain. Here is what I chose:
 
-- **Framework** : `Tanstack Start` powered by `vite` under the hood.
-- **Routing** :  `Tanstack Router` for Routing.
-- **Content**: `Content Collections` to write and manage markdown blogs with `type-safety`.
+- **Framework**: `TanStack Start` powered by `Vite` under the hood.
+- **Routing**: `TanStack Router` for type-safe routing.
+- **Content**: `Content Collections` to manage Markdown blogs with full type-safety.
 - **Styling**: `Tailwind CSS` and `shadcn/ui`.
 
-## Why Tanstack Start Not Next.JS?
-I decided to go with Tanstack Start which is using `Tanstack Router` for routing overall giving a `fast` and `performant` experiece with a great `DX` and `Funcnalities` so for me the best choice was the one and only `Tanstack Start`
+## Why TanStack Start instead of Next.js?
+I decided to go with **TanStack Start**. Because it uses `TanStack Router` for routing, it provides a fast and performant experience with incredible DX (Developer Experience). For me, it was the best choice for a modern web app.
 
-I Have Used `Next.Js` before but wnated to try something new this time and I can tell u should try something new sometimes. The DX with Tanstack Start is mindblowing. Very `fast` , `predictable` and `effective`.
+I have used `Next.js` before, but I wanted to try something new this time—and I highly recommend stepping out of your comfort zone. The DX with TanStack Start is mind-blowing: it's fast, predictable, and highly effective.
 
 ## Why Content Collections?
 
-Managing markdown files can sometimes be tedious. However, with `@content-collections/markdown`, the process is seamless. It compiles markdown to HTML during the build process, making the site incredibly fast and type-safe.
+Managing Markdown files can sometimes be tedious. However, with `@content-collections/markdown`, the process is seamless. It compiles Markdown to HTML during the build process, making the site incredibly fast and type-safe.
 
-Just Run `pnpx content-collections install`
+Just run:
+`pnpx content-collections install`
 
-That's it now u can start writing blogs in the content folder it does all the setup for u by default :D
+That's it! Now you can start writing blogs in the content folder; it handles the entire setup for you by default. :D
 
-## Why Tailwind And Shadcn/ui
+## Why Tailwind and shadcn/ui?
 
-`Why not?` this is 2026 not 2014 lol.
+**Why not?** It’s 2026, not 2014!
