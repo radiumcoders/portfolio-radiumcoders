@@ -278,6 +278,11 @@
 }
 
 ::selection {
-  background-color: #fee2e294;
+  background-color: #fee2e2;
   color: #f87171;
+}
+
+.dark ::selection {
+  background-color: #7f1d1d4b;
+  color: #ef4444;
 }
