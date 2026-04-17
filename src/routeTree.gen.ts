@@ -9,19 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as HulalaRouteImport } from './routes/hulala'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as HulalaIndexRouteImport } from './routes/hulala/index'
 import { Route as BlogsIndexRouteImport } from './routes/blogs/index'
 import { Route as BlogsIdRouteImport } from './routes/blogs/$id'
 
+const HulalaRoute = HulalaRouteImport.update({
+  id: '/hulala',
+  path: '/hulala',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HulalaIndexRoute = HulalaIndexRouteImport.update({
-  id: '/hulala/',
-  path: '/hulala/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogsIndexRoute = BlogsIndexRouteImport.update({
@@ -37,52 +37,52 @@ const BlogsIdRoute = BlogsIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/hulala': typeof HulalaRoute
   '/blogs/$id': typeof BlogsIdRoute
   '/blogs/': typeof BlogsIndexRoute
-  '/hulala/': typeof HulalaIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/hulala': typeof HulalaRoute
   '/blogs/$id': typeof BlogsIdRoute
   '/blogs': typeof BlogsIndexRoute
-  '/hulala': typeof HulalaIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/hulala': typeof HulalaRoute
   '/blogs/$id': typeof BlogsIdRoute
   '/blogs/': typeof BlogsIndexRoute
-  '/hulala/': typeof HulalaIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/blogs/$id' | '/blogs/' | '/hulala/'
+  fullPaths: '/' | '/hulala' | '/blogs/$id' | '/blogs/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/blogs/$id' | '/blogs' | '/hulala'
-  id: '__root__' | '/' | '/blogs/$id' | '/blogs/' | '/hulala/'
+  to: '/' | '/hulala' | '/blogs/$id' | '/blogs'
+  id: '__root__' | '/' | '/hulala' | '/blogs/$id' | '/blogs/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HulalaRoute: typeof HulalaRoute
   BlogsIdRoute: typeof BlogsIdRoute
   BlogsIndexRoute: typeof BlogsIndexRoute
-  HulalaIndexRoute: typeof HulalaIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/hulala': {
+      id: '/hulala'
+      path: '/hulala'
+      fullPath: '/hulala'
+      preLoaderRoute: typeof HulalaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/hulala/': {
-      id: '/hulala/'
-      path: '/hulala'
-      fullPath: '/hulala/'
-      preLoaderRoute: typeof HulalaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blogs/': {
@@ -104,9 +104,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HulalaRoute: HulalaRoute,
   BlogsIdRoute: BlogsIdRoute,
   BlogsIndexRoute: BlogsIndexRoute,
-  HulalaIndexRoute: HulalaIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
