@@ -24,9 +24,11 @@ export function JayLogo({ className, ...props }: JayLogoProps) {
       <rect x="60" y="20" width="20" height="10" fill="currentColor" />
 
       {/* Letter Y */}
-      <rect x="100" y="0" width="10" height="20" fill="currentColor" />
-      <rect x="130" y="0" width="10" height="20" fill="currentColor" />
-      <rect x="110" y="20" width="20" height="10" fill="currentColor" />
+      <rect x="100" y="0" width="10" height="10" fill="currentColor" />
+      <rect x="130" y="0" width="10" height="10" fill="currentColor" />
+      <rect x="110" y="10" width="10" height="10" fill="currentColor" />
+      <rect x="120" y="10" width="10" height="10" fill="currentColor" />
+      <rect x="115" y="20" width="10" height="10" fill="currentColor" />
       <rect x="115" y="30" width="10" height="10" fill="currentColor" />
     </svg>
   )

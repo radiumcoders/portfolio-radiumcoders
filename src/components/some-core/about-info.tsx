@@ -9,7 +9,6 @@ import {
   UserIcon,
   ArrowUpRightIcon,
 } from "@phosphor-icons/react"
-import { Corners } from "./corners"
 
 export interface AboutInfoProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -22,7 +21,6 @@ export function AboutInfo({ className, ...props }: AboutInfoProps) {
       )}
       {...props}
     >
-      <Corners />
       {/* Top Info Section */}
       <div className="flex flex-col gap-6 border-b border-border p-6">
         {/* Details Grid */}
@@ -94,7 +92,7 @@ export function AboutInfo({ className, ...props }: AboutInfoProps) {
         <SocialLink
           name="GitHub"
           icon="/icons/github.webp"
-          href="https://github.com/radiumcoders"
+          href="https://github.com/radiumcoders/portfolio-radiumcoders"
           className="border-t border-border md:border-t-0 md:border-r"
         />
         <SocialLink

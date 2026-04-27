@@ -1,6 +1,5 @@
 import { StickyAnimationWrapper } from "@/components/animations/sticky-animation-wrapper"
 import { Container } from "@/components/container"
-import { Corners } from "@/components/some-core/corners"
 import DashedGridRectangle from "@/components/some-core/DashedGridRectangle"
 import { GithubGraph } from "@/components/some-core/github-graph"
 import JayLogo from "@/components/some-core/JayLogo"
@@ -11,7 +10,6 @@ import { Education } from "@/components/some-core/education"
 import { createFileRoute } from "@tanstack/react-router"
 import { Projects } from "@/components/some-core/projects"
 import { AboutInfo } from "@/components/some-core/about-info"
-import { About } from "@/components/some-core/about"
 
 export const Route = createFileRoute("/")({ component: App })
 
@@ -26,7 +24,6 @@ function App() {
           innerClassName="relative overflow-hidden py-8 flex flex-col items-center"
           className="h-full"
         >
-          {/*<Corners />*/}
           <GithubGraph />
         </Container>
       </section>
@@ -39,7 +36,6 @@ function App() {
       </section>
       <section className="w-full border-t border-border">
         <Container innerClassName="py-8 flex flex-col gap-8">
-          <About />
           <AboutInfo />
         </Container>
       </section>
@@ -57,6 +53,7 @@ function App() {
         </Container>
       </section>
       <PatternSeparator />
+      <Footer />
     </main>
   )
 }
@@ -121,7 +118,6 @@ const LowerHeader = () => {
   return (
     <section className="h-fit w-full border-b border-border">
       <Container innerClassName="relative px-0">
-        <Corners />
         <DashedGridRectangle className="h-48 w-full p-0">
           <div className="flex h-full w-full items-center justify-center">
             <StickyAnimationWrapper>
@@ -131,5 +127,77 @@ const LowerHeader = () => {
         </DashedGridRectangle>
       </Container>
     </section>
+  )
+}
+
+const Footer = () => {
+  const year = new Date().getFullYear()
+
+  return (
+    <footer className="w-full">
+      <Container innerClassName="flex flex-col px-0">
+        <div className="grid w-full grid-cols-1 md:grid-cols-[1.2fr_1fr_1fr]">
+          <div className="flex flex-col gap-4 border-b border-border px-4 py-6 sm:px-6 md:border-r md:border-b-0">
+            <div className="flex h-24 w-fit items-end justify-start py-2">
+              <JayLogo className="h-12 w-auto text-foreground" />
+            </div>
+            <div className="space-y-1">
+              <p className="text-sm font-medium text-foreground">
+                Jay Sharma
+              </p>
+              <p className="max-w-sm font-mono text-xs text-muted-foreground">
+                Design engineer building polished interfaces, experiments, and
+                playful web products.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-3 border-b border-border px-4 py-6 sm:px-6 md:border-r md:border-b-0">
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground/70">
+              Navigate
+            </span>
+            <a href="#projects" className="text-sm text-foreground hover:underline">
+              Projects
+            </a>
+            <a href="/blogs" className="text-sm text-foreground hover:underline">
+              Blogs
+            </a>
+          </div>
+
+          <div className="flex flex-col gap-3 px-4 py-6 sm:px-6">
+            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground/70">
+              Reach Out
+            </span>
+            <a
+              href="mailto:radiumcoders@gmail.com"
+              className="text-sm text-foreground hover:underline"
+            >
+              radiumcoders@gmail.com
+            </a>
+            <a
+              href="https://github.com/radiumcoders/portfolio-radiumcoders"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-foreground hover:underline"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://x.com/radiumcoders"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm text-foreground hover:underline"
+            >
+              X / Twitter
+            </a>
+          </div>
+        </div>
+
+        <div className="flex w-full items-center justify-between gap-4 border-t border-border px-4 py-3 font-mono text-[10px] text-muted-foreground sm:px-6 sm:text-xs">
+          <span>Indore, India</span>
+          <span>{year}</span>
+        </div>
+      </Container>
+    </footer>
   )
 }
