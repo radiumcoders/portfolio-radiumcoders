@@ -15,10 +15,7 @@ export interface AboutInfoProps extends React.HTMLAttributes<HTMLDivElement> {}
 export function AboutInfo({ className, ...props }: AboutInfoProps) {
   return (
     <div
-      className={cn(
-        "relative flex w-full flex-col border border-border bg-background",
-        className
-      )}
+      className={cn("relative flex w-full flex-col bg-background", className)}
       {...props}
     >
       {/* Top Info Section */}

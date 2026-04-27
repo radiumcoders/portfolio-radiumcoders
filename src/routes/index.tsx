@@ -9,6 +9,7 @@ import { TechStack } from "@/components/some-core/tech-stack"
 import { Education } from "@/components/some-core/education"
 import { createFileRoute } from "@tanstack/react-router"
 import { Projects } from "@/components/some-core/projects"
+import { About } from "@/components/some-core/about"
 import { AboutInfo } from "@/components/some-core/about-info"
 
 export const Route = createFileRoute("/")({ component: App })
@@ -35,7 +36,9 @@ function App() {
         </Container>
       </section>
       <section className="w-full border-t border-border">
-        <Container innerClassName="py-8 flex flex-col gap-8">
+        <Container innerClassName="py-6 flex flex-col gap-0">
+          <About />
+          <PatternSeparator className="h-6 border-y-0" />
           <AboutInfo />
         </Container>
       </section>
