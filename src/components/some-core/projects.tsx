@@ -41,10 +41,25 @@ const TECH_ICONS: Record<
 const PROJECTS = {
   own: [
     {
-      title: "Xcn/UI",
-      date: "04.2026 - ∞",
+      title: "EvilButtons",
+      date: "05.2026 - ∞",
+      link: "https://evilbuttons.radiumcoders.com",
+      description:
+        "Ship beautiful websites faster than ever. Production-ready components, blocks and templates that make your site feel premium. Just copy, paste, customize.",
+      technologies: [
+        "React",
+        "Tanstack Start",
+        "Tailwind CSS",
+        "ShadCN",
+        "TypeScript",
+      ],
+    },
+    {
+      title: "Xcn/UI [Merged Into EvilButtons]",
+      date: "04.2026 - 05.2026",
       link: "https://ui.radiumcoders.com",
-      description: "Ship beautiful websites faster than ever. Production-ready components, blocks and templates that make your site feel premium. Just copy, paste, customize.",
+      description:
+        "Ship beautiful websites faster than ever. Production-ready components, blocks and templates that make your site feel premium. Just copy, paste, customize.",
       technologies: [
         "React",
         "Tanstack Start",
