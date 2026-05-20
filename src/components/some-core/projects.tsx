@@ -45,7 +45,7 @@ const PROJECTS = {
       date: "05.2026 - ∞",
       link: "https://evilbuttons.com",
       description:
-        "Ship beautiful websites faster than ever. Production-ready components, blocks and templates that make your site feel premium. Just copy, paste, customize.",
+        "shadcn/ui registry of playful, highly animated button components with 8-bit aesthetics and punchy interactions.",
       technologies: [
         "React",
         "Next.js",
