@@ -43,7 +43,7 @@ const PROJECTS = {
     {
       title: "EvilButtons",
       date: "05.2026 - ∞",
-      link: "https://evilbuttons.radiumcoders.com",
+      link: "https://evilbuttons.com",
       description:
         "Ship beautiful websites faster than ever. Production-ready components, blocks and templates that make your site feel premium. Just copy, paste, customize.",
       technologies: [
