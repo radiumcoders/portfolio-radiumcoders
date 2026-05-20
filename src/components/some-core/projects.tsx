@@ -48,7 +48,7 @@ const PROJECTS = {
         "Ship beautiful websites faster than ever. Production-ready components, blocks and templates that make your site feel premium. Just copy, paste, customize.",
       technologies: [
         "React",
-        "Tanstack Start",
+        "Next.js",
         "Tailwind CSS",
         "ShadCN",
         "TypeScript",
