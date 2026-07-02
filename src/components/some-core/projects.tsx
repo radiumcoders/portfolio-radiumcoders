@@ -150,17 +150,7 @@ const PROJECTS = {
         "Motion",
       ],
     },
-  ],
-  games: [
-    {
-      title: "IronRoot",
-      date: "05.2026 - ∞",
-      link: "https://mellowlines.dev/?utm_source=radiumcoders.com",
-      description:
-        "A cozy atmospheric top-down pixel art RPG set in a fading forest world threatened by industrial expansion. Players journey through quiet woodland trails, abandoned camps, ruined villages, and ancient groves while protecting survivors and uncovering the remnants of a disappearing culture.",
-      technologies: ["Godot", "Asprite"],
-    },
-  ],
+  ]
 }
 
 export interface ProjectProps extends React.HTMLAttributes<HTMLDivElement> {}
